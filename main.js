@@ -24,8 +24,9 @@ const cash = Number(cashGiven.value);
          cashTable.style.display = "none";
     }
     if(cash < bill){
-        showMessage("Do you wanna wash plates");
+        showMessage("Do you wanna wash plates?");
         cashTable.style.display = "none";
+        
     }
   } else {
     showMessage(" Invalid input.");
