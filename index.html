@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" class="stylesheet">
+    <title>cash register Manager</title>
+</head>
+<body> 
+   <main class="display-main">
+    <div class="container">
+        <h1 class="heading">
+            Cash Register App
+        </h1>
+        <p class="details">
+            Calculate the minimum number of notes to be returned after the cash is received for required bill amount.
+        </p> 
+        
+        <input type="number" id="amount-input"placeholder="Bill amount"></input>
+      
+        <input  type="number" id="cash-input" placeholder="cash amount"></input>
+        <button id="check-button">Calculate</button>
+        <p id= "#error-message"></p>
+
+
+        <div id="second-part">
+    
+    
+    <table id="show-cash-table">
+        <tr>
+            <th>No. of Notes</th>
+            <td class="no-of-notes"></td>
+            <td class="no-of-notes"></td>
+            <td class="no-of-notes"></td>
+            <td class="no-of-notes"></td>
+            <td class="no-of-notes"></td>
+            <td class="no-of-notes"></td>
+            <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td  class="note-value">2000</td>
+            <td  class="note-value">500</td>
+            <td  class="note-value">100</td>
+            <td  class="note-value">20</td>
+            <td  class="note-value">10</td>
+            <td  class="note-value">5</td>
+            <td  class="note-value">1</td>
+        </tr>
+    </table>
+
+</div>
+</div>
+   </main> 
+
+<!-- <p id="error-message"> </p> -->
+    <script src="main.js" type =" text/javascript"></script>
+</body>
+</html>

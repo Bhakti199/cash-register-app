@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --primary-color: #E5E7EB;
+    --secondary-color:#9CA3AF;
+    --white-color:#F9FAFB;
+
+
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--primary-color);
+    text-align: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.display-main
+    {
+    padding: 1rem;
+    padding: auto;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    border-radius: 1rem;
+    margin-bottom: 4rem;
+}
+
+.container {
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1rem;
+
+}
+/* 
+#second-part {
+
+   
+    text-align: center;
+       justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 1rem;
+} */
+
+
+#error-message {
+    display: flex;
+    flex-direction: column;
+    text-align: centre;
+}
+
+#next-button,
+#check-button {
+    padding-top: 1rem;
+    padding: 0.5rem;
+    width: 5rem;
+    border-radius: 0.3rem;
+    background-color:  var(--secondary-color);
+}
+
+ #amount-input, #cash-input {
+     padding: 0.5rem;
+     width: 30%;
+     margin-bottom: 0.5rem;
+     border-radius: 0.2rem;
+ }
+
+ #show-cash-table{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ /* padding: 1rem; */
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: 2px solid var(--secondary-color); 
+    margin-top: 1rem;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+ }
+ .details{
+        font-size:large ;
+ }
+ 
