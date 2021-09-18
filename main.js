@@ -4,16 +4,37 @@ const checkButton = document.querySelector("#check-button");
 const message = document.querySelector("#error-message");
 const noOfNotes = document.querySelectorAll(".no-of-notes");
 const cashTable = document.querySelector("#show-cash-table");
+const proceedBtn = document.querySelector("#proceed-button");
+const secondPart = document.querySelector("#second-part");
+secondPart.style.visibility = "hidden"; 
 
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
+secondPart.style.visibility = "hidden"; 
+proceedBtn.addEventListener("click"  , proceedBtnClickHandler);
+
+function proceedBtnClickHandler(){
+    cashGiven.value = null;
+    secondPart.style.visibility = "hidden";    
+    const bill = Number(billAmount.value);
+    if(bill  > 0){
+        hideMessage();
+        // cashGiven.value = '';
+        secondPart.style.visibility = "visible";
+    }else{
+        console.log("here");
+        showMessage(" Invalid input.");
+        secondPart.style.visibility = "hidden";    
+    }
+}
 checkButton.addEventListener("click",validateBillAndCashAmount);
 function validateBillAndCashAmount()
 {
    hideMessage();
 const bill = Number(billAmount.value);
 const cash = Number(cashGiven.value);
-  if (bill > 0 && cash > 0) {
+secondPart.style.visibily = "visible";
+  if (cash > 0) {
     if (cash > bill) {
       const amountToBeReturned = cash - bill;
       calculateChange(amountToBeReturned);
@@ -29,6 +50,7 @@ const cash = Number(cashGiven.value);
         
     }
   } else {
+    console.log("invalid");
     showMessage(" Invalid input.");
     cashTable.style.display = "none";
     
