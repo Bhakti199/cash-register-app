@@ -13,6 +13,7 @@ const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 secondPart.style.visibility = "hidden"; 
 proceedBtn.addEventListener("click"  , proceedBtnClickHandler);
 
+
 function proceedBtnClickHandler(){
     cashGiven.value = null;
     secondPart.style.visibility = "hidden";    
@@ -21,6 +22,7 @@ function proceedBtnClickHandler(){
         hideMessage();
         // cashGiven.value = '';
         secondPart.style.visibility = "visible";
+        cashTable.style.display = "none";
     }else{
         console.log("here");
         showMessage(" Invalid input.");
@@ -34,7 +36,7 @@ function validateBillAndCashAmount()
 const bill = Number(billAmount.value);
 const cash = Number(cashGiven.value);
 secondPart.style.visibily = "visible";
-  if (cash > 0) {
+  if (cash > 0 && bill > 0) {
     if (cash > bill) {
       const amountToBeReturned = cash - bill;
       calculateChange(amountToBeReturned);
