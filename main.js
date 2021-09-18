@@ -6,29 +6,29 @@ const noOfNotes = document.querySelectorAll(".no-of-notes");
 const cashTable = document.querySelector("#show-cash-table");
 const proceedBtn = document.querySelector("#proceed-button");
 const secondPart = document.querySelector("#second-part");
-secondPart.style.visibility = "hidden"; 
+ 
 
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
-proceedBtn.style.visibility = "visible";
-secondPart.style.visibility = "hidden"; 
+proceedBtn.style.display = "block";
+secondPart.style.display = "none"; 
 proceedBtn.addEventListener("click"  , proceedBtnClickHandler);
 
 
 function proceedBtnClickHandler(){
     cashGiven.value = null;
-    secondPart.style.visibility = "hidden";    
+    // secondPart.style.display = "none";    
     const bill = Number(billAmount.value);
     if(bill  > 0){
         hideMessage();
         // cashGiven.value = '';
-        secondPart.style.visibility = "visible";
-       proceedBtn.style.visibility = "hidden";
+        secondPart.style.display = "block";
+       proceedBtn.style.display = "none";
         cashTable.style.display = "none";
     }else{
         console.log("here");
         showMessage(" Invalid input.");
-        secondPart.style.visibility = "hidden";    
-        proceedBtn.style.visibility = "visible"; 
+        secondPart.style.display = "none";    
+        proceedBtn.style.display = "block"; 
 
     }
 }
@@ -38,7 +38,7 @@ function validateBillAndCashAmount()
    hideMessage();
 const bill = Number(billAmount.value);
 const cash = Number(cashGiven.value);
-secondPart.style.visibility = "visible";
+secondPart.style.display = "block";
   if (cash > 0 && bill > 0) {
     if (cash > bill) {
       const amountToBeReturned = cash - bill;
@@ -57,8 +57,8 @@ secondPart.style.visibility = "visible";
   } else if(bill < 0 || bill === 0){
     console.log("invalid");
     showMessage(" Invalid input.");
-    proceedBtn.style.visibility = "visible"; 
-    secondPart.style.visibility = "hidden";
+    proceedBtn.style.display = "block"; 
+    secondPart.style.display = "none";
     cashTable.style.display = "none";
     
   }else {
