@@ -9,7 +9,7 @@ const secondPart = document.querySelector("#second-part");
 secondPart.style.visibility = "hidden"; 
 
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
-
+proceedBtn.style.visibility = "visible";
 secondPart.style.visibility = "hidden"; 
 proceedBtn.addEventListener("click"  , proceedBtnClickHandler);
 
@@ -22,12 +22,14 @@ function proceedBtnClickHandler(){
         hideMessage();
         // cashGiven.value = '';
         secondPart.style.visibility = "visible";
-       
+       proceedBtn.style.visibility = "hidden";
         cashTable.style.display = "none";
     }else{
         console.log("here");
         showMessage(" Invalid input.");
         secondPart.style.visibility = "hidden";    
+        proceedBtn.style.visibility = "visible"; 
+
     }
 }
 checkButton.addEventListener("click",validateBillAndCashAmount);
@@ -36,7 +38,7 @@ function validateBillAndCashAmount()
    hideMessage();
 const bill = Number(billAmount.value);
 const cash = Number(cashGiven.value);
-secondPart.style.visibily = "visible";
+secondPart.style.visibility = "visible";
   if (cash > 0 && bill > 0) {
     if (cash > bill) {
       const amountToBeReturned = cash - bill;
@@ -52,13 +54,22 @@ secondPart.style.visibily = "visible";
         cashTable.style.display = "none";
         
     }
-  } else {
+  } else if(bill < 0 || bill === 0){
     console.log("invalid");
     showMessage(" Invalid input.");
+    proceedBtn.style.visibility = "visible"; 
+    secondPart.style.visibility = "hidden";
+    cashTable.style.display = "none";
+    
+  }else {
+    console.log("invalid");
+    showMessage(" Invalid input.");
+   
     cashTable.style.display = "none";
     
   }
-};
+    
+  };
 
 function calculateChange(amountToBeReturned) {
   for (let i = 0; i < availableNotes.length; i++) {
