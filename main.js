@@ -22,6 +22,7 @@ function proceedBtnClickHandler(){
         hideMessage();
         // cashGiven.value = '';
         secondPart.style.visibility = "visible";
+       
         cashTable.style.display = "none";
     }else{
         console.log("here");
