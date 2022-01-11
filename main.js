@@ -11,30 +11,31 @@ const secondPart = document.querySelector("#second-part");
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 proceedBtn.style.display = "block";
 secondPart.style.display = "none"; 
-proceedBtn.addEventListener("click"  , proceedBtnClickHandler);
 
-
-function proceedBtnClickHandler(){
+const proceedBtnClickHandler = () => {
+  
     cashGiven.value = null;
     // secondPart.style.display = "none";    
     const bill = Number(billAmount.value);
     if(bill  > 0){
         hideMessage();
-        // cashGiven.value = '';
+       
         secondPart.style.display = "block";
        proceedBtn.style.display = "none";
         cashTable.style.display = "none";
     }else{
         console.log("here");
         showMessage(" Invalid input.");
+        
         secondPart.style.display = "none";    
         proceedBtn.style.display = "block"; 
 
     }
 }
-checkButton.addEventListener("click",validateBillAndCashAmount);
-function validateBillAndCashAmount()
-{
+
+proceedBtn.addEventListener("click"  , proceedBtnClickHandler);
+
+const validateBillAndCashAmount = () => {
    hideMessage();
 const bill = Number(billAmount.value);
 const cash = Number(cashGiven.value);
@@ -71,17 +72,20 @@ secondPart.style.display = "block";
     
   };
 
-function calculateChange(amountToBeReturned) {
-  for (let i = 0; i < availableNotes.length; i++) {
-    const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
-    amountToBeReturned = amountToBeReturned % availableNotes[i];
-    noOfNotes[i].innerText = numberOfNotes;
-  }
+checkButton.addEventListener("click",validateBillAndCashAmount);
+
+const calculateChange = amountToBeReturned => {
+    availableNotes.map((num, index) => {
+      const numberOfNotes = Math.trunc(amountToBeReturned / num);
+      amountToBeReturned = amountToBeReturned % num;
+      noOfNotes[index].innerText = numberOfNotes;
+    })
 }
-function showMessage(msg){
+
+const showMessage = msg => {
     message.style.display= "";
     message.innerText = msg;
 }
- function hideMessage() {
+const hideMessage = () => {
    message.style.display = "none";
 }
